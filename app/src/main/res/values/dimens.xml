@@ -5,4 +5,23 @@
     <dimen name="nav_header_vertical_spacing">8dp</dimen>
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+    <!--텍스트뷰-->
+    <dimen name="textview_lockscreen_width">80dp</dimen>
+    <dimen name="textview_lockscreen_height">30dp</dimen>
+    <dimen name="textview_lockscreen_margin_left">20dp</dimen>
+    <dimen name="textview_lockscreen_margin_right">20dp</dimen>
+    <dimen name="textview_lockscreen_margin_top">20dp</dimen>
+    <dimen name="textview_lockscreen_margin_bottom">10dp</dimen>
+
+    <!--레이아웃-->
+    <dimen name="layout_lockscreen_height_answer">120dp</dimen>
+
+    <!--버튼-->
+    <dimen name="fab_lockscreen_size">60dp</dimen>
+    <dimen name="fab_lockscreen_margin_left">20dp</dimen>
+    <dimen name="fab_lockscreen_margin_right">20dp</dimen>
+    <dimen name="fab_lockscreen_margin_top">10dp</dimen>
+    <dimen name="fab_lockscreen_margin_bottom">20dp</dimen>
+
 </resources>

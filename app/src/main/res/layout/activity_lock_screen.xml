@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:theme="@style/AppTheme.NoActionBar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.LockScreenActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textview_lockscreen_point"
+            android:hint="포인트"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:background="@color/colorGreen"
+            android:layout_width="@dimen/textview_lockscreen_width"
+            android:layout_height="@dimen/textview_lockscreen_height"
+            android:layout_marginLeft="@dimen/textview_lockscreen_margin_left"
+            android:layout_marginTop="@dimen/textview_lockscreen_margin_top"
+            android:layout_marginBottom="@dimen/textview_lockscreen_margin_bottom"
+            android:gravity="center"
+            android:layout_alignParentLeft="true"/>
+
+        <TextView
+            android:id="@+id/textview_lockscreen_lefttime"
+            android:hint="남은시간"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:background="@color/colorGreen"
+            android:layout_width="@dimen/textview_lockscreen_width"
+            android:layout_height="@dimen/textview_lockscreen_height"
+            android:layout_marginTop="@dimen/textview_lockscreen_margin_top"
+            android:layout_marginBottom="@dimen/textview_lockscreen_margin_bottom"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/textview_lockscreen_percentage"
+            android:hint="정답률"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:background="@color/colorGreen"
+            android:layout_width="@dimen/textview_lockscreen_width"
+            android:layout_height="@dimen/textview_lockscreen_height"
+            android:layout_marginRight="@dimen/textview_lockscreen_margin_right"
+            android:layout_marginTop="@dimen/textview_lockscreen_margin_top"
+            android:layout_marginBottom="@dimen/textview_lockscreen_margin_bottom"
+            android:gravity="center"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <vinos.mathjaxwebview.view.MathJaxWebView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            
+        </vinos.mathjaxwebview.view.MathJaxWebView>
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_lockscreen_height_answer"
+        android:background="@android:color/darker_gray">
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_lockscreen_call"
+            android:layout_width="@dimen/fab_lockscreen_size"
+            android:layout_height="@dimen/fab_lockscreen_size"
+            android:layout_marginLeft="@dimen/textview_lockscreen_margin_left"
+            android:layout_marginTop="@dimen/fab_lockscreen_margin_top"
+            android:layout_marginBottom="@dimen/fab_lockscreen_margin_bottom"
+            android:src="@drawable/ic_menu_phone"
+            android:backgroundTint="@color/colorGreen"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_lockscreen_unlock"
+            android:layout_width="@dimen/fab_lockscreen_size"
+            android:layout_height="@dimen/fab_lockscreen_size"
+            android:layout_marginTop="@dimen/fab_lockscreen_margin_top"
+            android:layout_marginBottom="@dimen/fab_lockscreen_margin_bottom"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_menu_lock_open"
+            android:backgroundTint="@color/colorGreen"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_lockscreen_mother"
+            android:layout_width="@dimen/fab_lockscreen_size"
+            android:layout_height="@dimen/fab_lockscreen_size"
+            android:layout_marginRight="@dimen/textview_lockscreen_margin_right"
+            android:layout_marginTop="@dimen/fab_lockscreen_margin_top"
+            android:layout_marginBottom="@dimen/fab_lockscreen_margin_bottom"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_menu_flash"
+            android:backgroundTint="@color/colorGreen"/>
+
+    </RelativeLayout>
+</LinearLayout>
