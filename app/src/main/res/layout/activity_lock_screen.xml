@@ -70,7 +70,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/layout_lockscreen_height_answer"
-        android:background="@android:color/darker_gray">
+        android:background="@android:color/white">
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerview_lockscreen_answer"
             android:layout_width="match_parent"
