@@ -15,6 +15,7 @@ public class AnswerAdapter extends RecyclerView.Adapter<AnswerAdapter.ViewHolder
     private static final String TAG = "AnswerAdapter";
 
     private ArrayList<String> mDataSet = new ArrayList<>();
+    static private onAnswerListener onAnswerListener;
 
     public AnswerAdapter(ArrayList<String> mDataSet) {
         this.mDataSet = mDataSet;
@@ -30,7 +31,7 @@ public class AnswerAdapter extends RecyclerView.Adapter<AnswerAdapter.ViewHolder
             v.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    onAnswerListener.onClickAnswerItem(v, getAdapterPosition());
                 }
             });
             textView_number = (TextView) v.findViewById(R.id.textview_adapter_answer_number);
@@ -83,4 +84,15 @@ public class AnswerAdapter extends RecyclerView.Adapter<AnswerAdapter.ViewHolder
         return mDataSet.size();
     }
 
+    public interface onAnswerListener{
+        void onClickAnswerItem(View v, int position);
+    }
+
+    public void setOnAnswerListener(AnswerAdapter.onAnswerListener onAnswerListener) {
+        this.onAnswerListener = onAnswerListener;
+    }
+
+    public void setmDataSet(ArrayList<String> mDataSet) {
+        this.mDataSet = mDataSet;
+    }
 }

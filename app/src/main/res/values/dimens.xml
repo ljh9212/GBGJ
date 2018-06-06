@@ -32,6 +32,7 @@
     <dimen name="adapter_answer_margin_top">5dp</dimen>
     <dimen name="adapter_answer_margin_bottom">5dp</dimen>
     <dimen name="adapter_answer_number_width">30dp</dimen>
+    <dimen name="adapter_answer_divider_height">1dp</dimen>
 
 
 </resources>

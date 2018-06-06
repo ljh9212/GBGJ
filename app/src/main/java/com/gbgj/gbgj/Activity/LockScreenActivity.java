@@ -10,10 +10,14 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gbgj.gbgj.Adapter.AnswerAdapter;
 import com.gbgj.gbgj.R;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -36,6 +40,8 @@ public class LockScreenActivity extends AppCompatActivity {
 
     protected AnswerAdapter mAnswerAdapter;
     protected LinearLayoutManager mLayoutManager;
+
+    protected AnswerAdapter.onAnswerListener onAnswerListener;
 
     static public final String TAG = "LockScreenActivity";
 
@@ -77,7 +83,19 @@ public class LockScreenActivity extends AppCompatActivity {
         mAnswerSet.add("답5");
         mAnswerAdapter = new AnswerAdapter(mAnswerSet);
 
+        onAnswerListener = new AnswerAdapter.onAnswerListener() {
+            @Override
+            public void onClickAnswerItem(View v, int position) {
+                TextView textView = (TextView)v.findViewById(R.id.textview_adapter_answer);
+                String answer = textView.getText().toString();
+                Toast.makeText(getApplicationContext(), answer, Toast.LENGTH_SHORT).show();
+            }
+        };
+
+        mAnswerAdapter.setOnAnswerListener(onAnswerListener);
+
         recyclerview_lockscreen_answer.setAdapter(mAnswerAdapter);
+
 
 
         setMathViewContent("<p>1,  2<sup>2</sup>  , 3, 5</p>");

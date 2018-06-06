@@ -24,4 +24,11 @@
 
     </LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/adapter_answer_divider_height"
+        android:background="@android:color/black"
+        android:layout_gravity="bottom"/>
+
+
 </FrameLayout>
