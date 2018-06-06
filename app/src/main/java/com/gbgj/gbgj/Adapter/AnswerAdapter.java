@@ -11,6 +11,8 @@ import com.gbgj.gbgj.R;
 
 import java.util.ArrayList;
 
+import vinos.mathjaxwebview.view.MathJaxWebView;
+
 public class AnswerAdapter extends RecyclerView.Adapter<AnswerAdapter.ViewHolder>  {
     private static final String TAG = "AnswerAdapter";
 
@@ -26,7 +28,7 @@ public class AnswerAdapter extends RecyclerView.Adapter<AnswerAdapter.ViewHolder
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView textView_number;
-        private final TextView textView_answer;
+        private final MathJaxWebView mathjaxwebview_adapter_answer;
 
         public ViewHolder(View v) {
             super(v);
@@ -38,15 +40,15 @@ public class AnswerAdapter extends RecyclerView.Adapter<AnswerAdapter.ViewHolder
                 }
             });
             textView_number = (TextView) v.findViewById(R.id.textview_adapter_answer_number);
-            textView_answer = (TextView) v.findViewById(R.id.textview_adapter_answer);
+            mathjaxwebview_adapter_answer = (MathJaxWebView) v.findViewById(R.id.mathjaxwebview_adapter_answer);
         }
 
         public TextView getTextView_number() {
             return textView_number;
         }
 
-        public TextView getTextView_answer() {
-            return textView_answer;
+        public MathJaxWebView getMathJaxWebView_answer() {
+            return mathjaxwebview_adapter_answer;
         }
     }
 
@@ -61,7 +63,7 @@ public class AnswerAdapter extends RecyclerView.Adapter<AnswerAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.getTextView_answer().setText(mDataSet.get(position));
+        holder.getMathJaxWebView_answer().setText(mDataSet.get(position));
 
         switch (position){
             case 0:

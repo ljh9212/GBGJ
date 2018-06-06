@@ -140,8 +140,8 @@ public class LockScreenActivity extends AppCompatActivity {
         onAnswerListener = new AnswerAdapter.onAnswerListener() {
             @Override
             public void onClickAnswerItem(View v, int position) {
-                TextView textView = (TextView) v.findViewById(R.id.textview_adapter_answer);
-                String answer = textView.getText().toString();
+                MathJaxWebView mathJaxWebView = (MathJaxWebView) v.findViewById(R.id.mathjaxwebview_adapter_answer);
+                String answer = mathJaxWebView.getText();
                 Toast.makeText(getApplicationContext(), answer, Toast.LENGTH_SHORT).show();
             }
         };
