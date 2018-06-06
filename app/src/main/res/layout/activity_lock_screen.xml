@@ -55,7 +55,7 @@
 
     </RelativeLayout>
     
-    <RelativeLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
@@ -65,7 +65,29 @@
             android:layout_height="match_parent">
             
         </vinos.mathjaxwebview.view.MathJaxWebView>
-    </RelativeLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_lockscreen_question_prev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|bottom"
+            android:layout_marginBottom="@dimen/fab_lockscreen_margin_bottom"
+            android:layout_marginLeft="@dimen/textview_lockscreen_margin_left"
+            android:layout_marginTop="@dimen/fab_lockscreen_margin_top"
+            android:backgroundTint="@color/colorGreen"
+            android:src="@drawable/ic_menu_prev" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_lockscreen_question_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:layout_marginBottom="@dimen/fab_lockscreen_margin_bottom"
+            android:layout_marginRight="@dimen/textview_lockscreen_margin_right"
+            android:layout_marginTop="@dimen/fab_lockscreen_margin_top"
+            android:backgroundTint="@color/colorGreen"
+            android:src="@drawable/ic_menu_next" />
+    </FrameLayout>
     
     <RelativeLayout
         android:layout_width="match_parent"

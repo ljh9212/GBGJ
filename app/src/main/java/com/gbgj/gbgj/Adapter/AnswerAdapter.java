@@ -17,6 +17,9 @@ public class AnswerAdapter extends RecyclerView.Adapter<AnswerAdapter.ViewHolder
     private ArrayList<String> mDataSet = new ArrayList<>();
     static private onAnswerListener onAnswerListener;
 
+    public AnswerAdapter() {
+    }
+
     public AnswerAdapter(ArrayList<String> mDataSet) {
         this.mDataSet = mDataSet;
     }
@@ -94,5 +97,6 @@ public class AnswerAdapter extends RecyclerView.Adapter<AnswerAdapter.ViewHolder
 
     public void setmDataSet(ArrayList<String> mDataSet) {
         this.mDataSet = mDataSet;
+        notifyDataSetChanged();
     }
 }
