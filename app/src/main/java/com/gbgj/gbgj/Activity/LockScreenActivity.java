@@ -118,11 +118,11 @@ public class LockScreenActivity extends AppCompatActivity {
         question3.setmQuestionId(3);
         question3.setmQuestioContent("3번문제");
         ArrayList<Answer> arrayList3 = new ArrayList();
-        arrayList3.add(new Answer("<p>중력 방향과 반대 방향으로 작용한다.</p>", false));
-        arrayList3.add(new Answer("<p>기체 분자의 운동이 빨라지면 기체의 압력이 증가한다.</p>", false));
-        arrayList3.add(new Answer("<p>기체 분자가 단위 넓이에 작용하는 힘의 크기를 나타낸다.</p>", false));
-        arrayList3.add(new Answer("<p>기체 분자가 용기 벽에 충돌하는 횟수가 많아지면 증가한다.</p>", false));
-        arrayList3.add(new Answer("<p>기체 분자가 스스로 운동하여 용기 벽에 충돌하기 때문에 나타난다.</p>", true));
+        arrayList3.add(new Answer("<p>2, 3, 5</p>", true));
+        arrayList3.add(new Answer("3<sup>4</sup>  , 1, 5", false));
+        arrayList3.add(new Answer("<p>2<sup>2</sup>  , 3, 5</p>", false));
+        arrayList3.add(new Answer("<p>1,  2<sup>2</sup>  , 3, 5</p>", false));
+        arrayList3.add(new Answer("<p>2<sup>2</sup>  , 3, 5</p>", false));
         question3.setmQuestioAnswer(arrayList3);
 
         mQuestionBank.addmQuestion(question1);
@@ -141,8 +141,22 @@ public class LockScreenActivity extends AppCompatActivity {
             @Override
             public void onClickAnswerItem(View v, int position) {
                 MathJaxWebView mathJaxWebView = (MathJaxWebView) v.findViewById(R.id.mathjaxwebview_adapter_answer);
-                String answer = mathJaxWebView.getText();
-                Toast.makeText(getApplicationContext(), answer, Toast.LENGTH_SHORT).show();
+                String answerText = mathJaxWebView.getText();
+//                Toast.makeText(getApplicationContext(), answerText, Toast.LENGTH_SHORT).show();
+
+                Question question = mQuestionBank.getCurrentQuestion();
+
+                ArrayList<Answer> answerArrayList = question.getmQuestioAnswer();
+                for(int answerIndex = 0; answerIndex < answerArrayList.size(); answerIndex++){
+                    Answer answer = answerArrayList.get(answerIndex);
+                    if(answer.isRightChoice()){
+                        if(position == answerIndex){
+                            Toast.makeText(getApplicationContext(), "정답입니다.", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                    }
+                }
+                Toast.makeText(getApplicationContext(), "오답입니다.", Toast.LENGTH_SHORT).show();
             }
         };
 

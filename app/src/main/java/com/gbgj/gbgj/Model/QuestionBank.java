@@ -3,7 +3,7 @@ package com.gbgj.gbgj.Model;
 import java.util.ArrayList;
 
 public class QuestionBank {
-    int mQuestionIndex = 0;
+    int mQuestionIndex = -1;
     ArrayList<Question> mQuestionList = new ArrayList<>();
 
     public ArrayList<Question> getmQuestionList() {
@@ -37,6 +37,12 @@ public class QuestionBank {
             mQuestionIndex = mQuestionList.size() - 1;
         }
 
+        Question question = mQuestionList.get(mQuestionIndex);
+
+        return question;
+    }
+
+    public Question getCurrentQuestion(){
         Question question = mQuestionList.get(mQuestionIndex);
 
         return question;

@@ -16,7 +16,9 @@
         <TextView
             android:id="@+id/textview_adapter_answer_number"
             android:layout_width="@dimen/adapter_answer_number_width"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"/>
 
         <vinos.mathjaxwebview.view.MathJaxWebView
             android:id="@+id/mathjaxwebview_adapter_answer"
